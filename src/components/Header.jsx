@@ -1,9 +1,7 @@
 function Header({ text }) {
     return (
         <header>
-            <div>
-                <h2>{text}</h2>
-            </div>
+            <h2>Hello, {text}!</h2>
         </header>
     )
 }

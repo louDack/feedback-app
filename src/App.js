@@ -1,42 +1,33 @@
 import Header from "./components/Header"
 
 function App() {
+  const test = true
   const background = {backgroundColor: 'blue'}
   const feedbackList = [
     {name: 'Anri Okita', id: 1},
     {name: 'Hitomi Tanaka', id: 2},
     {name: 'Nanako Mori', id: 3}
   ]
-  // pass style into prop.
 
+  let color
+
+  // Goal: Conditional everything!
+  
   return (
     <div style={background}>
-      <Header text='Hello World'/>
-      <h1>Hello, you fackin' pussy!</h1>
-
-      {
-        feedbackList.map((feedback, index) => (
-          <div>{feedback.name}</div>
-        ))
-      }
+      <Header text='World'/>
+      <h1>Fuck you, fackin' pussy!</h1>
       
-      <br></br>
-      
-      {
-        [
-          <div>{feedbackList[0].name}</div>,
-          <div>{feedbackList[1].name}</div>,
-          <div>{feedbackList[2].name}</div>
-        ]
-      }
+      {/* What the fk is this? */}
+      {color = test ? 'red' : 'blue'}
+      {console.log(color)}
 
-      <br></br>
-      
-      <div>{feedbackList[0].name}</div>
-      <div>{feedbackList[1].name}</div>
-      <div>{feedbackList[2].name}</div>
+      {test ? 'You suck' : 'Lick booogers.'}
+      {!test ? <div style={{color: 'red'}}><h1>HERE I AM</h1></div> : <h5>Go forth eorlingas!</h5>}
 
-
+      {feedbackList.map((feedback, index) => (
+          <Header key={index} text={feedback.name} />
+      ))}
     </div>
   );
 }
