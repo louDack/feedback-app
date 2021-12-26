@@ -10,6 +10,7 @@ function App() {
   ]
 
   let color
+  let moon = <div style={{backgroundColor: 'silver'}}>HAIL MOON</div>
 
   // Goal: Conditional everything!
   
@@ -24,6 +25,10 @@ function App() {
 
       {test ? 'You suck' : 'Lick booogers.'}
       {!test ? <div style={{color: 'red'}}><h1>HERE I AM</h1></div> : <h5>Go forth eorlingas!</h5>}
+
+      {test && <div style={{backgroundColor: 'goldenrod'}}>HAIL SUN</div>}
+      {test && moon}
+
 
       {feedbackList.map((feedback, index) => (
           <Header key={index} text={feedback.name} />
