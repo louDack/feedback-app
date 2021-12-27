@@ -9,7 +9,7 @@ function App() {
     {name: 'Nanako Mori', id: 3}
   ]
 
-  let color
+  let color, textColor = {color: 'green'}
   let moon = <div style={{backgroundColor: 'silver'}}>HAIL MOON</div>
 
   // Goal: Conditional everything!
@@ -20,10 +20,18 @@ function App() {
       <h1>Fuck you, fackin' pussy!</h1>
       
       {/* What the fk is this? */}
+      {/* Conditional Rendering via ternary operator */}
       {color = test ? 'red' : 'blue'}
       {console.log(color)}
 
-      {test ? 'You suck' : 'Lick booogers.'}
+      {/* Dynamic styling */}
+      <div style={textColor}>I'm dynamic styling!</div>
+      <Header text={'TIMOTHY'} textColor={'purple'} />
+      
+      {/* Error warning if passing in wrong type into props. */}
+      {/* <Header text={123} textColor={'purple'} /> */}
+
+      {test ? 'suck' : 'Lick booogers.'}
       {!test ? <div style={{color: 'red'}}><h1>HERE I AM</h1></div> : <h5>Go forth eorlingas!</h5>}
 
       {test && <div style={{backgroundColor: 'goldenrod'}}>HAIL SUN</div>}
