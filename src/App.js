@@ -10,11 +10,16 @@ function App() {
   }
 
   const [feedback, setFeedback] = useState(FeedbackData)
+
+  const deleteFeedback = (id) => {
+    const newFeedbackList = feedback.filter((list) => list.id !== id)
+    setFeedback(newFeedbackList)
+  }
   
   return (
     <div className='container' style={background}>
 
-      <FeedbackList data={feedback}/>
+      <FeedbackList data={feedback} deleteFeedback={deleteFeedback}/>
       
     </div>
   );

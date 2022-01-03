@@ -32,6 +32,16 @@
   background-color: black;
 }
 
+.delete-card {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 * {
