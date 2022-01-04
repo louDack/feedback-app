@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import { useState } from 'react'
 import FeedbackList from "./components/FeedbackList"
 import FeedbackData from "./data/FeedbackData"
+import CustomerResponse from "./components/CustomerResponse"
 
 function App() {
   const background = {
@@ -18,7 +19,7 @@ function App() {
   
   return (
     <div className='container' style={background}>
-
+      <CustomerResponse />
       <FeedbackList data={feedback} deleteFeedback={deleteFeedback}/>
       
     </div>

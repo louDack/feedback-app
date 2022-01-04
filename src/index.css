@@ -39,6 +39,28 @@
   color: white;
 }
 
+.review-text {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.review-textbox {
+  width: 70%;
+  padding: 7px 5px;
+  border: none;
+}
+
+.review-submit-btn {
+  border: none;
+}
+
+.button-overlap-input {
+  display: flex;
+  justify-content: center;
+  border: solid 1px black;
+}
+
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 * {
