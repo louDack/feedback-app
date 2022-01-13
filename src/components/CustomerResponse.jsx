@@ -12,6 +12,9 @@ const CustomerResponse = () => {
             <label htmlFor="review">
                 <p className='review-text'>How would you rate my service today?</p>
             </label>
+
+            
+
             <div className="button-overlap-input">
                 <input onChange={(e) => handleTextChange(e)} type="text" id="review" name="fname" value={text} className='review-textbox'/>
                 
