@@ -1,5 +1,4 @@
 import Header from "./components/Header"
-import { useState } from 'react'
 import FeedbackList from "./components/FeedbackList"
 import CustomerResponse from "./components/CustomerResponse"
 import AboutPage from "./pages/AboutPage"
