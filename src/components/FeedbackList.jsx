@@ -1,11 +1,13 @@
 import FeedbackItem from "./FeedbackItem"
+import { useContext } from "react"
+import FeedbackContext from "../context/FeedbackContext"
 
-const FeedbackList = ({data, deleteFeedback}) => {
+const FeedbackList = ({ deleteFeedback }) => {
+    const {feedback: data} = useContext(FeedbackContext)
+
     return (
         <div>
-            {/* {console.log(data)} */}
             {data.map(feedback => {
-                // return <div key={feedback.id}>{feedback.name}</div>
                 return <FeedbackItem key={feedback.id} feedback={feedback} deleteFeedback={deleteFeedback}/>
             })}
         </div>

@@ -3,21 +3,16 @@ import '../index.css'
 import { FaChromecast } from "react-icons/fa"
 import Card from './Card'
 
-const FeedbackItem = ({ feedback, reverse, deleteFeedback }) => {
-    
+const FeedbackItem = ({ feedback, deleteFeedback }) => {
     return (
         <Card>
-            <div className="rating">10</div>
+            <div className="rating">{feedback.rating}</div>
             <button className="delete-card" onClick={() => deleteFeedback(feedback.id)}>
-                <FaChromecast />
+                <FaChromecast style={{color: 'black'}}/>
             </button>
-            <div className="text-display">{feedback.name}</div>
+            <div style={{color: 'blue'}}>{feedback.text}</div>
         </Card>
     )
 }
 
 export default FeedbackItem
-
-FeedbackItem.defaultProps = {
-    reverse: true
-}

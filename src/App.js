@@ -5,6 +5,7 @@ import FeedbackData from "./data/FeedbackData"
 import CustomerResponse from "./components/CustomerResponse"
 import AboutPage from "./pages/AboutPage"
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import { FeedbackProvider } from './context/FeedbackContext'
 
 function App() {
   const background = {
@@ -20,26 +21,22 @@ function App() {
   }
   
   return (
-    <Router>
-      <div className='container' style={background}>
-        <Routes>
-          {/* Must use 'exact path' b/c url path matching catches all matching cases. So, if matching '/', '/' AND '/about' would match and both would render as a result. */}
-          <Route exact path='/' element={
-            <>
-              <CustomerResponse />
-              <FeedbackList data={feedback} deleteFeedback={deleteFeedback}/>
-
-              {/* Prevents reloading of the page. */}
-              <Link to='/about'>To about page.</Link>
-            </>
-          } />
-
-          {/* Path is literally the url path. */}
-          {/* Element takes a component wrapped in JSX braces. */}
-          <Route path='/about' element={<AboutPage />}/>
-        </Routes>
-      </div>
-    </Router>
+    <FeedbackProvider>
+      <Router>
+        <div className='container' style={background}>
+          <Routes>
+            <Route exact path='/' element={
+              <>
+                <CustomerResponse />
+                <FeedbackList deleteFeedback={deleteFeedback}/>
+                <Link to='/about'>To about page.</Link>
+              </>
+            } />
+            <Route path='/about' element={<AboutPage />}/>
+          </Routes>
+        </div>
+      </Router>
+    </FeedbackProvider>
   );
 }
 
