@@ -2,8 +2,12 @@ import React from 'react'
 import '../index.css'
 import { FaChromecast } from "react-icons/fa"
 import Card from './Card'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-const FeedbackItem = ({ feedback, deleteFeedback }) => {
+const FeedbackItem = ({ feedback }) => {
+    const { deleteFeedback } = useContext(FeedbackContext)
+    
     return (
         <Card>
             <div className="rating">{feedback.rating}</div>

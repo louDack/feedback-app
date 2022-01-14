@@ -21,8 +21,14 @@ export const FeedbackProvider = ({ children }) => {
         },
     ])
 
+    const deleteFeedback = (id) => {
+        const newFeedbackList = feedback.filter((list) => list.id !== id)
+        setFeedback(newFeedbackList)
+    }
+
     return <FeedbackContext.Provider value={{
         feedback,
+        deleteFeedback
     }}>
         {children}
     </FeedbackContext.Provider>
